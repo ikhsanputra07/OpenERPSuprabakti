@@ -10,25 +10,37 @@ angular.module('app.routes', [])
     
   
 
-      .state('activity', {
-    url: '/page4',
-    templateUrl: 'templates/activity.html',
-    controller: 'activityCtrl'
+      .state('mENUUTAMA', {
+    url: '/menu',
+    templateUrl: 'templates/mENUUTAMA.html',
+    controller: 'mENUUTAMACtrl'
   })
 
-  .state('login', {
-    url: '/page6',
-    templateUrl: 'templates/login.html',
-    controller: 'loginCtrl'
+  .state('mENULOGIN', {
+    url: '/login',
+    templateUrl: 'templates/mENULOGIN.html',
+    controller: 'mENULOGINCtrl'
   })
 
-  .state('menu', {
-    url: '/page7',
-    templateUrl: 'templates/menu.html',
-    controller: 'menuCtrl'
+  .state('mENUSALES', {
+    url: '/menu-sales',
+    templateUrl: 'templates/mENUSALES.html',
+    controller: 'mENUSALESCtrl'
   })
 
-$urlRouterProvider.otherwise('/page4')
+  .state('sALESACTIVITY', {
+    url: '/sales-activity',
+    templateUrl: 'templates/sALESACTIVITY.html',
+    controller: 'sALESACTIVITYCtrl'
+  })
+
+  .state('fORMACTIVITY', {
+    url: '/form-activity',
+    templateUrl: 'templates/fORMACTIVITY.html',
+    controller: 'fORMACTIVITYCtrl'
+  })
+
+$urlRouterProvider.otherwise('/login')
 
   
 

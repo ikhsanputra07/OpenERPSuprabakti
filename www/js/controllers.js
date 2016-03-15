@@ -1,14 +1,22 @@
 angular.module('app.controllers', [])
   
-.controller('activityCtrl', function($scope) {
+.controller('mENUUTAMACtrl', function($scope) {
 
 })
    
-.controller('loginCtrl', function($scope) {
+.controller('mENULOGINCtrl', function($scope) {
 
 })
    
-.controller('menuCtrl', function($scope) {
+.controller('mENUSALESCtrl', function($scope) {
+
+})
+   
+.controller('sALESACTIVITYCtrl', function($scope) {
+
+})
+   
+.controller('fORMACTIVITYCtrl', function($scope) {
 
 })
  
