@@ -28,7 +28,7 @@ angular.module('app.routes', [])
     controller: 'menuCtrl'
   })
 
-$urlRouterProvider.otherwise('/page4')
+$urlRouterProvider.otherwise('/login')
 
   
 
