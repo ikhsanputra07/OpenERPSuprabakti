@@ -22,3 +22,13 @@ angular.module('starter', ['ionic'])
     }
   });
 })
+
+.config(function($stateProvider,$urlRouterProvider){
+  $stateProvider
+    .state('login', {
+      url: '/',
+      templateUrl: 'login.html',
+    })
+
+  $urlRouterProvider.otherwise("/");
+})
