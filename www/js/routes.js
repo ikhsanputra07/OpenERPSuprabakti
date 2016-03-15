@@ -17,7 +17,7 @@ angular.module('app.routes', [])
   })
 
   .state('login', {
-    url: '/page6',
+    url: '/login',
     templateUrl: 'templates/login.html',
     controller: 'loginCtrl'
   })
