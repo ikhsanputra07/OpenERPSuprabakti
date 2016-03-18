@@ -10,7 +10,7 @@ angular.module('app.routes', [])
     
   
 
-      .state('mENUUTAMA', {
+    .state('mENUUTAMA', {
     url: '/menu',
     templateUrl: 'templates/mENUUTAMA.html',
     controller: 'mENUUTAMACtrl'
@@ -22,10 +22,16 @@ angular.module('app.routes', [])
     controller: 'mENULOGINCtrl'
   })
 
-  .state('mENUSALES', {
-    url: '/menu-sales',
-    templateUrl: 'templates/mENUSALES.html',
-    controller: 'mENUSALESCtrl'
+  .state('sUBMENUSALES', {
+    url: '/submenu-sales',
+    templateUrl: 'templates/sUBMENUSALES.html',
+    controller: 'sUBMENUSALESCtrl'
+  })
+
+  .state('mENUACTIVITY', {
+    url: '/menu-activity',
+    templateUrl: 'templates/mENUACTIVITY.html',
+    controller: 'mENUACTIVITYCtrl'
   })
 
   .state('sALESACTIVITY', {
@@ -38,6 +44,12 @@ angular.module('app.routes', [])
     url: '/form-activity',
     templateUrl: 'templates/fORMACTIVITY.html',
     controller: 'fORMACTIVITYCtrl'
+  })
+
+  .state('pREVIEWPLANACTIVITY', {
+    url: '/preview-plan-activity',
+    templateUrl: 'templates/pREVIEWPLANACTIVITY.html',
+    controller: 'pREVIEWPLANACTIVITYCtrl'
   })
 
 $urlRouterProvider.otherwise('/login')

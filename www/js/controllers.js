@@ -8,7 +8,11 @@ angular.module('app.controllers', [])
 
 })
    
-.controller('mENUSALESCtrl', function($scope) {
+.controller('sUBMENUSALESCtrl', function($scope) {
+
+})
+   
+.controller('mENUACTIVITYCtrl', function($scope) {
 
 })
    
@@ -17,6 +21,10 @@ angular.module('app.controllers', [])
 })
    
 .controller('fORMACTIVITYCtrl', function($scope) {
+
+})
+   
+.controller('pREVIEWPLANACTIVITYCtrl', function($scope) {
 
 })
  
