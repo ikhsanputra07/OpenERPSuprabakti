@@ -10,22 +10,54 @@ angular.module('app.routes', [])
     
   
 
-      .state('activity', {
-    url: '/page4',
-    templateUrl: 'templates/activity.html',
-    controller: 'activityCtrl'
+      .state('mENUUTAMA', {
+    url: '/menu',
+    templateUrl: 'templates/mENUUTAMA.html',
+    controller: 'mENUUTAMACtrl'
   })
 
-  .state('login', {
+
+  .state('mENULOGIN', {
     url: '/login',
-    templateUrl: 'templates/login.html',
-    controller: 'loginCtrl'
+    templateUrl: 'templates/mENULOGIN.html',
+    controller: 'mENULOGINCtrl'
   })
 
-  .state('menu', {
-    url: '/page7',
-    templateUrl: 'templates/menu.html',
-    controller: 'menuCtrl'
+  .state('sUBMENUSALES', {
+    url: '/submenu-sales',
+    templateUrl: 'templates/sUBMENUSALES.html',
+    controller: 'sUBMENUSALESCtrl'
+  })
+
+
+  .state('mENUACTIVITY', {
+    url: '/menu-activity',
+    templateUrl: 'templates/mENUACTIVITY.html',
+    controller: 'mENUACTIVITYCtrl'
+  })
+
+  .state('sALESACTIVITY', {
+    url: '/sales-activity',
+    templateUrl: 'templates/sALESACTIVITY.html',
+    controller: 'sALESACTIVITYCtrl'
+  })
+
+  .state('fORMACTIVITY', {
+    url: '/form-activity',
+    templateUrl: 'templates/fORMACTIVITY.html',
+    controller: 'fORMACTIVITYCtrl'
+  })
+
+  .state('pREVIEWPLANACTIVITY', {
+    url: '/preview-plan-activity',
+    templateUrl: 'templates/pREVIEWPLANACTIVITY.html',
+    controller: 'pREVIEWPLANACTIVITYCtrl'
+  })
+
+  .state('fORMUPDATEACTIVITY', {
+    url: '/form-update-activity',
+    templateUrl: 'templates/fORMUPDATEACTIVITY.html',
+    controller: 'fORMUPDATEACTIVITYCtrl'
   })
 
 $urlRouterProvider.otherwise('/login')
