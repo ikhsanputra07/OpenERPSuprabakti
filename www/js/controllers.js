@@ -27,4 +27,8 @@ angular.module('app.controllers', [])
 .controller('pREVIEWPLANACTIVITYCtrl', function($scope) {
 
 })
+   
+.controller('fORMUPDATEACTIVITYCtrl', function($scope) {
+
+})
  

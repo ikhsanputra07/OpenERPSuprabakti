@@ -10,7 +10,7 @@ angular.module('app.routes', [])
     
   
 
-    .state('mENUUTAMA', {
+      .state('mENUUTAMA', {
     url: '/menu',
     templateUrl: 'templates/mENUUTAMA.html',
     controller: 'mENUUTAMACtrl'
@@ -50,6 +50,12 @@ angular.module('app.routes', [])
     url: '/preview-plan-activity',
     templateUrl: 'templates/pREVIEWPLANACTIVITY.html',
     controller: 'pREVIEWPLANACTIVITYCtrl'
+  })
+
+  .state('fORMUPDATEACTIVITY', {
+    url: '/form-update-activity',
+    templateUrl: 'templates/fORMUPDATEACTIVITY.html',
+    controller: 'fORMUPDATEACTIVITYCtrl'
   })
 
 $urlRouterProvider.otherwise('/login')
