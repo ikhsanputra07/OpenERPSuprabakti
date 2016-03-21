@@ -58,6 +58,12 @@ angular.module('app.routes', [])
     controller: 'fORMUPDATEACTIVITYCtrl'
   })
 
+  .state('fORMDAYMONDAY', {
+    url: '/form-day-monday',
+    templateUrl: 'templates/fORMDAYMONDAY.html',
+    controller: 'fORMDAYMONDAYCtrl'
+  })
+
 $urlRouterProvider.otherwise('/login')
 
   

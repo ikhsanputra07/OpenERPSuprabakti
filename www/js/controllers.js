@@ -31,4 +31,8 @@ angular.module('app.controllers', [])
 .controller('fORMUPDATEACTIVITYCtrl', function($scope) {
 
 })
+   
+.controller('fORMDAYMONDAYCtrl', function($scope) {
+
+})
  
