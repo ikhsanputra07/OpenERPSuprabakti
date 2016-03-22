@@ -16,15 +16,15 @@
             <ion-list style="">
                 <label style="" name="username" class="item item-input">
                     <span class="input-label">Username</span>
-                    <input placeholder="Username" type="text">
+                    <input placeholder="Username" type="text" ng-model="data.username">
                 </label>
                 <label style="" name="password" class="item item-input">
                     <span class="input-label">Password</span>
-                    <input placeholder="Password" type="password">
+                    <input  ng-model="data.pass" placeholder="Password" type="password">
                 </label>
             </ion-list>
             <div style="width: 284px; height: 22px;" class="spacer"></div>
-            <a class="button button-positive  button-block icon ion-log-in" style="font-weight:bold;color:#FFFFFF;" id="mENULOGIN-button2" ui-sref="mENUUTAMA">Log in</a>
+            <a class="button button-positive  button-block icon ion-log-in" style="font-weight:bold;color:#FFFFFF;" id="mENULOGIN-button2" ui-sref="mENUUTAMA" ng-click="login()">Log in</a>
         </form>
     </ion-content>
 </ion-view>
