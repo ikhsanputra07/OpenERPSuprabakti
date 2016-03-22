@@ -32,6 +32,7 @@ angular.module('app.services', [])
             ).then(
                 function successCallback(response){
                     console.log('success');
+                    console.log(response)
                     console.log(response.data['result']);
                     deferred.resolve('Welcome ' + name + '!');
                 },
