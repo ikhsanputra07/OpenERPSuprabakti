@@ -17,6 +17,7 @@ angular.module('app.routes', [])
   })
 
 
+
   .state('mENULOGIN', {
     url: '/login',
     templateUrl: 'templates/mENULOGIN.html',
@@ -52,6 +53,7 @@ angular.module('app.routes', [])
     url: '/preview-plan-activity',
     templateUrl: 'templates/pREVIEWPLANACTIVITY.html',
     controller: 'pREVIEWPLANACTIVITYCtrl'
+
   })
 
   .state('fORMUPDATEACTIVITY', {
