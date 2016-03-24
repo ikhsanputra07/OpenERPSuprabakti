@@ -1,19 +1,21 @@
 angular.module('app.controllers', [])
   
-.controller('mENUUTAMACtrl', function($scope) {
+.controller('menuutamaCtrl', function($scope) {
 
 })
    
 
-.controller('mENULOGINCtrl', function($scope, LoginService, $ionicPopup, $state, $http, $httpParamSerializerJQLike) {
+.controller('menuloginCtrl', function($scope, LoginService, $ionicPopup, $state, $http, $httpParamSerializerJQLike) {
 
 
     
 
     // $http.get("http://10.36.15.51:8000/custom/get/?format=json")
     // jsonp('http://10.36.15.51:8000/custom/get/?format=json');
-
-
+    if (! localStorage.reload) {
+        localStorage.setItem("reload","true");
+        window.location.reload();
+    }
 	$scope.data = {};
     var name =(window.localStorage.getItem("dhaussjauhxdjuzlgzuglscfasshdausdjfkjzasd")) ;
     var pass =(window.localStorage.getItem("uhadlfdlfgghfrejajkfdfhzjudfakjhbfkjagfjufug")) ;
@@ -22,7 +24,7 @@ angular.module('app.controllers', [])
 
        
          LoginService.loginUser(name, pass).success(function(data) {
-            $state.go('sALESACTIVITY');
+            $state.go('salesactivity');
         
         }).error(function(data) {
             var alertPopup = $ionicPopup.alert({
@@ -34,7 +36,7 @@ angular.module('app.controllers', [])
     $scope.login = function() {
         console.log(window.btoa($scope.data.username))  
         LoginService.loginUser(window.btoa($scope.data.username),window.btoa($scope.data.pass)).success(function(data) {
-            $state.go('sALESACTIVITY');
+            $state.go('salesactivity');
 
          
            
@@ -58,62 +60,118 @@ angular.module('app.controllers', [])
 })
 
    
-.controller('sUBMENUSALESCtrl', function($scope) {
+.controller('submenusalesCtrl', function($scope) {
 
 })
    
-.controller('mENUACTIVITYCtrl', function($scope) {
+.controller('menuactivityCtrl', function($scope) {
 
 })
    
-.controller('sALESACTIVITYCtrl', function($scope,$http) {
+.controller('salesactivityCtrl', function($scope,$http,$state,$ionicLoading,$window) {
+   
+      // $scope.loadingIndicator = $ionicLoading.show({
+      //       template: '<ion-spinner icon="spiral"></ion-spinner>'
+      //   });
+    
     var name =(window.localStorage.getItem("dhaussjauhxdjuzlgzuglscfasshdausdjfkjzasd")) ;
     var pass =(window.localStorage.getItem("uhadlfdlfgghfrejajkfdfhzjudfakjhbfkjagfjufug")) ;
-    // var user_id="a"; 
-    // console.log(pass)
-     $http(
+    var salesdata = (window.localStorage.getItem('salesdata'));
+
+     if (salesdata==null) {
+            
+            $http(
                 {
                     method: 'POST',
                     url: 'http://10.36.15.51:8000/openerp/sales.activity/',
-                    data: {'usn':name,'pw':pass},
+                    data: {'usn':name,'pw':pass , 'fields':['user_id','begin','end']},
                     headers: {
                         'Authorization': 'Basic ' + "cmV6YTpzdXByYWJha3Rp",
                       
                     },
-                    // para
+                
                 }
             ).then(
                 function successCallback(response){
-                    console.log('success');
-                    $scope.user_id = response.data['Result']['user_id'][1]
-                    $scope.date_begin =  response.data['Result']['begin']
-                    $scope.date_end =  response.data['Result']['end']
+                    console.log('success masukin dari server');
+                    $scope.sales = response.data['Result']
+
+                    var sd = response.data['Result'];
                     
-                    // console.log(response.data['Result']['end'])
-                    // console.log(response.data['Result']['begin'])
+                    window.localStorage.setItem( 'salesdata', JSON.stringify(sd));
+                
        
                 },
                 function errorCallback(response){
-                    console.log('erroor');
+                    console.log('erroor data kosong');
+                    $window.localStorage.clear();
+                    $state.go('menulogin');
                 }
             )
+            // $scope.loadingstop = $ionicLoading.hide();          
+     }
+     else {
+
+         var ambilsales = JSON.parse( window.localStorage.getItem( 'salesdata' ));
+         
+         $scope.sales = ambilsales;
+
+         var ids = ambilsales[0].id;         
+
+        $http(
+            {
+                method: 'POST',
+                url: 'http://10.36.15.51:8000/openerp/sales.activity/getupdate/',
+                data: {'usn':name,'pw':pass , 'fields':['user_id','begin','end'],'ids':ids},
+                headers: {
+                    'Authorization': 'Basic ' + "cmV6YTpzdXByYWJha3Rp",
+                  
+                },
+            
+            }
+        ).then(
+            function successCallback(response){
+                console.log('success tembak');
+                $scope.sales = response.data['Result']
+
+                // // window.localStorage.setItem('salesvalue',$scope.sales );
+                // var sd = {
+                //     'sdat':response.data['Result']
+                // };
+                // window.localStorage.setItem( 'salesdata', JSON.stringify(sd));
+            
+   
+            },
+            function errorCallback(response){
+                console.log('erroor tembak reza');
+                $window.localStorage.clear();
+                $state.go('menulogin');
+            }
+        )
+   
+     // $scope.loadingstop = $ionicLoading.hide();
+     } 
          
 })
    
-.controller('fORMACTIVITYCtrl', function($scope) {
+.controller('formactivityCtrl', function($scope) {
 
 })
    
 .controller('pREVIEWPLANACTIVITYCtrl', function($scope) {
 
 })
+
+.controller('fORMREVIEWCTIVITYCtrl', function($scope) {
+
+})
    
-.controller('fORMUPDATEACTIVITYCtrl', function($scope) {
+.controller('formupdateactivityCtrl', function($scope) {
 
 
 })
    
-.controller('fORMDAYMONDAYCtrl', function($scope) {
+.controller('formdaymondayCtrl', function($scope) {
 
 })
  

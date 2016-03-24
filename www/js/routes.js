@@ -10,43 +10,43 @@ angular.module('app.routes', [])
     
   
 
-      .state('mENUUTAMA', {
+      .state('menuutama', {
     url: '/menu',
-    templateUrl: 'templates/mENUUTAMA.html',
-    controller: 'mENUUTAMACtrl'
+    templateUrl: 'templates/menuutama.html',
+    controller: 'menuutamaCtrl'
   })
 
 
 
-  .state('mENULOGIN', {
+  .state('menulogin', {
     url: '/login',
-    templateUrl: 'templates/mENULOGIN.html',
-    controller: 'mENULOGINCtrl'
+    templateUrl: 'templates/menulogin.html',
+    controller: 'menuloginCtrl'
   })
 
-  .state('sUBMENUSALES', {
+  .state('submenusales', {
     url: '/submenu-sales',
-    templateUrl: 'templates/sUBMENUSALES.html',
-    controller: 'sUBMENUSALESCtrl'
+    templateUrl: 'templates/submenusales.html',
+    controller: 'submenusalesCtrl'
   })
 
 
-  .state('mENUACTIVITY', {
+  .state('menuactivity', {
     url: '/menu-activity',
-    templateUrl: 'templates/mENUACTIVITY.html',
-    controller: 'mENUACTIVITYCtrl'
+    templateUrl: 'templates/menuactivity.html',
+    controller: 'menuactivityCtrl'
   })
 
-  .state('sALESACTIVITY', {
+  .state('salesactivity', {
     url: '/sales-activity',
-    templateUrl: 'templates/sALESACTIVITY.html',
-    controller: 'sALESACTIVITYCtrl'
+    templateUrl: 'templates/salesactivity.html',
+    controller: 'salesactivityCtrl'
   })
 
-  .state('fORMACTIVITY', {
+  .state('formactivity', {
     url: '/form-activity',
-    templateUrl: 'templates/fORMACTIVITY.html',
-    controller: 'fORMACTIVITYCtrl'
+    templateUrl: 'templates/formactivity.html',
+    controller: 'formactivityCtrl'
   })
 
   .state('pREVIEWPLANACTIVITY', {
@@ -56,16 +56,22 @@ angular.module('app.routes', [])
 
   })
 
-  .state('fORMUPDATEACTIVITY', {
-    url: '/form-update-activity',
-    templateUrl: 'templates/fORMUPDATEACTIVITY.html',
-    controller: 'fORMUPDATEACTIVITYCtrl'
+  .state('formreviewactivity', {
+    url: '/form-review-activity',
+    templateUrl: 'templates/formreviewactivity.html',
+    controller: 'fORMREVIEWCTIVITYCtrl'
   })
 
-  .state('fORMDAYMONDAY', {
+  .state('formupdateactivity', {
+    url: '/form-update-activity',
+    templateUrl: 'templates/formupdateactivity.html',
+    controller: 'formupdateactivityCtrl'
+  })
+
+  .state('formdaymonday', {
     url: '/form-day-monday',
-    templateUrl: 'templates/fORMDAYMONDAY.html',
-    controller: 'fORMDAYMONDAYCtrl'
+    templateUrl: 'templates/formdaymonday.html',
+    controller: 'formdaymondayCtrl'
   })
 
 $urlRouterProvider.otherwise('/login')
