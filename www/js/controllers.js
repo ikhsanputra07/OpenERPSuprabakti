@@ -84,7 +84,7 @@ angular.module('app.controllers', [])
                 {
                     method: 'POST',
                     url: 'http://10.36.15.51:8000/openerp/sales.activity/',
-                    data: {'usn':name,'pw':pass , 'fields':['user_id','begin','end']},
+                    data: {'usn':name,'pw':pass , 'fields':['user_id','begin','end','write_date']},
                     headers: {
                         'Authorization': 'Basic ' + "cmV6YTpzdXByYWJha3Rp",
                       
@@ -93,7 +93,7 @@ angular.module('app.controllers', [])
                 }
             ).then(
                 function successCallback(response){
-                    console.log('success masukin dari server');
+                    console.log('success isi storage kosong dari server');
                     $scope.sales = response.data['Result']
 
                     var sd = response.data['Result'];
@@ -122,7 +122,7 @@ angular.module('app.controllers', [])
             {
                 method: 'POST',
                 url: 'http://10.36.15.51:8000/openerp/sales.activity/getupdate/',
-                data: {'usn':name,'pw':pass , 'fields':['user_id','begin','end'],'ids':ids},
+                data: {'usn':name,'pw':pass , 'fields':['user_id','begin','end','write_date'],'ids':ids},
                 headers: {
                     'Authorization': 'Basic ' + "cmV6YTpzdXByYWJha3Rp",
                   
@@ -131,7 +131,7 @@ angular.module('app.controllers', [])
             }
         ).then(
             function successCallback(response){
-                console.log('success tembak');
+                console.log('success tembak server');
                 $scope.sales = response.data['Result']
 
                 // // window.localStorage.setItem('salesvalue',$scope.sales );
@@ -162,11 +162,85 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('fORMREVIEWCTIVITYCtrl', function($scope) {
+.controller('formreviewactivityCtrl', function($scope,$stateParams) {
+
+    var name =(window.localStorage.getItem("dhaussjauhxdjuzlgzuglscfasshdausdjfkjzasd")) ;
+    var pass =(window.localStorage.getItem("uhadlfdlfgghfrejajkfdfhzjudfakjhbfkjagfjufug")) ;
+    // console.log($stateParams.idsact)
+    var idx = $stateParams.idsact;
+    var ambilsales = JSON.parse( window.localStorage.getItem( 'salesdata' ));
+            // $http(
+            //     {
+            //         method: 'POST',
+            //         url: 'http://10.36.15.51:8000/openerp/sales.activity/',
+            //         data: {'usn':name,'pw':pass , 'fields':['user_id','begin','end'] 'ids' : ids},
+            //         headers: {
+            //             'Authorization': 'Basic ' + "cmV6YTpzdXByYWJha3Rp",
+                      
+            //         },
+                
+            //     }
+            // ).then(
+            //     function successCallback(response){
+            //         console.log('success isi storage kosong dari server');
+            //         $scope.sales = response.data['Result']
+
+            //         var sd = response.data['Result'];
+                    
+            //         window.localStorage.setItem( 'salesdata', JSON.stringify(sd));
+                
+       
+            //     },
+            //     function errorCallback(response){
+            //         console.log('erroor data kosong');
+            //         $window.localStorage.clear();
+            //         $state.go('menulogin');
+            //     }
+            // )
+
+
 
 })
    
 .controller('formupdateactivityCtrl', function($scope) {
+    
+    var name =(window.localStorage.getItem("dhaussjauhxdjuzlgzuglscfasshdausdjfkjzasd")) ;
+    var pass =(window.localStorage.getItem("uhadlfdlfgghfrejajkfdfhzjudfakjhbfkjagfjufug")) ;
+    // console.log($stateParams.idsact)
+    // $scope.idsact = $stateParams.idsact
+    
+    // var ids = $stateParams.idsact;
+
+    //     // $http(
+    //         //     {
+    //         //         method: 'POST',
+    //         //         url: 'http://10.36.15.51:8000/openerp/sales.activity/',
+    //         //         data: {'usn':name,'pw':pass , 'fields':['user_id','begin','end'] 'ids' : ids},
+    //         //         headers: {
+    //         //             'Authorization': 'Basic ' + "cmV6YTpzdXByYWJha3Rp",
+                      
+    //         //         },
+                
+    //         //     }
+    //         // ).then(
+    //         //     function successCallback(response){
+    //         //         console.log('success isi storage kosong dari server');
+    //         //         $scope.sales = response.data['Result']
+
+    //         //         var sd = response.data['Result'];
+                    
+    //         //         window.localStorage.setItem( 'salesdata', JSON.stringify(sd));
+                
+       
+    //         //     },
+    //         //     function errorCallback(response){
+    //         //         console.log('erroor data kosong');
+    //         //         $window.localStorage.clear();
+    //         //         $state.go('menulogin');
+    //         //     }
+            // )
+
+
 
 
 })

@@ -57,9 +57,9 @@ angular.module('app.routes', [])
   })
 
   .state('formreviewactivity', {
-    url: '/form-review-activity',
+    url: '/form-review-activity/:idsact',
     templateUrl: 'templates/formreviewactivity.html',
-    controller: 'fORMREVIEWCTIVITYCtrl'
+    controller: 'formreviewactivityCtrl'
   })
 
   .state('formupdateactivity', {
