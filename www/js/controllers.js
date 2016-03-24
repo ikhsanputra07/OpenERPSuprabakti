@@ -158,7 +158,7 @@ angular.module('app.controllers', [])
 
 })
    
-.controller('pREVIEWPLANACTIVITYCtrl', function($scope) {
+.controller('previewplanactivityCtrl', function($scope) {
 
 })
 

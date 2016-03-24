@@ -49,10 +49,10 @@ angular.module('app.routes', [])
     controller: 'formactivityCtrl'
   })
 
-  .state('pREVIEWPLANACTIVITY', {
+  .state('previewplanactivity', {
     url: '/preview-plan-activity',
-    templateUrl: 'templates/pREVIEWPLANACTIVITY.html',
-    controller: 'pREVIEWPLANACTIVITYCtrl'
+    templateUrl: 'templates/previewplanactivity.html',
+    controller: 'previewplanactivityCtrl'
 
   })
 
